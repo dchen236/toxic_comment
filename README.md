@@ -1,2 +1,5 @@
 # toxic_comment
-Uncomment the gpu thing allow memory growth from benchmark.py when pushing to github
+
+- kaggle_benchmark.py is their official benchmark with metrics 
+- metrics.py is the metrics defined by the toxic challenge
+- models.py contains a toy bert, I used it to test if metrics.py works in train.py
