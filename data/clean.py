@@ -1,6 +1,7 @@
 import csv
 import re
-
+import nltk
+from nltk.corpus import stopwords
 
 def preprocess(data):
     '''
@@ -13,7 +14,10 @@ def preprocess(data):
         return text
 
     data = clean_special_chars(str(data), punct)
-    return data
+    data = data.split()
+    stop_words = set(stopwords.words('english'))
+    cleaned = [word for word in data if word not in stop_words]
+    return " ".join(cleaned)
 
 f_names = ['askreddit.csv', 'changemyview.csv',  'politics.csv',  'wholesomememes.csv']
 
