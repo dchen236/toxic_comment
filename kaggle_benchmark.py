@@ -21,6 +21,7 @@ import tensorflow as tf
 from metrics import *
 import config as cfg
 from util import save_submission
+import os
 
 # Convert taget and identity columns to booleans
 def convert_to_bool(df, col_name):
@@ -109,7 +110,7 @@ if __name__ == "__main__":
     IDENTITY_COLUMN = cfg.identity_columns
     TRAIN_CSV = cfg.train_csv
     TEST_CSV = cfg.test_csv
-    SUBMISSION_CSV = "../submissions/kaggle_bench_mark.csv"
+    SUBMISSION_CSV = "submissions/kaggle_bench_mark.csv"
     MAX_NUM_WORDS = 10000
     # All comments must be truncated or padded to be the same length.
     MAX_SEQUENCE_LENGTH = cfg.max_seq_len
@@ -138,8 +139,9 @@ if __name__ == "__main__":
     tokenizer.fit_on_texts(train_df[TEXT_COLUMN])
 
     model = train_model(train_df, validate_df, tokenizer)
+    MODEL_NAME = 'kaggle_benchmark'
+    model.save_model(os.path.join("models", MODEL_NAME))
 
-    MODEL_NAME = 'my_model'
     validate_df[MODEL_NAME] = model.predict(pad_text(validate_df[TEXT_COLUMN], tokenizer))[:, 1]
     bias_metrics_df = compute_bias_metrics_for_model(validate_df, IDENTITY_COLUMN, MODEL_NAME, TOXICITY_COLUMN)
     get_final_metric(bias_metrics_df, calculate_overall_auc(validate_df, MODEL_NAME))
