@@ -19,20 +19,21 @@ f_names = ['askreddit.csv', 'changemyview.csv',  'politics.csv',  'wholesomememe
 
 
 for f_name in f_names:
-    with open(f_name) as read_obj, open(f'cleaned_{f_name}', 'w') as write_obj:
+    with open(f_name) as read_obj, open(f'predict_{f_name}', 'w') as write_obj:
         print(f'Cleaning {f_name}')
         reader = csv.reader(read_obj, delimiter='\t')
-        writer = csv.writer(write_obj, delimiter='\t')
+        writer = csv.writer(write_obj)
 
         headers = next(reader)
-        headers.append('cleaned_comment')
-        writer.writerow(headers)
-        i = headers.index('body')
-        
+        h = headers.index('body')
+        i = headers.index('id')
+        writer.writerow(['id', 'comment'])        
         for row in reader:
-            clean_body = preprocess(row[i])
-            row.append(clean_body)
-            writer.writerow(row)
+            id = row[i]
+            body = row[h]
+            clean_body = preprocess(body)
+            output_row = [id, clean_body]
+            writer.writerow(output_row)
             
         
     
