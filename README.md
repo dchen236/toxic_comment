@@ -10,7 +10,7 @@ NOTE: if you have trouble loading the scripts, click reload after the first fail
 - [script: non_nn_models.ipynb](https://github.com/dchen236/toxic_comment/blob/master/non_nn_models.ipynb) for trainning non neural networks including Naive Bayes, Logistic Regression and Decision Tree
 - [script: BERT_Toxic.ipynb](https://github.com/dchen236/toxic_comment/blob/master/BERT_Toxic.ipynb) for trainning BERT
 - [script: kaggle_benchmark.py](https://github.com/dchen236/toxic_comment/blob/master/kaggle_benchmark.py) for trainning CNN
-- [script: non_nn_models.ipynb](https://github.com/dchen236/toxic_comment/blob/master/non_nn_models.ipynb) for trainning non neural networks including Naive Bayes, Logistic Regression and Decision Tree
+
 TODO: add LSTM, CNN + BERT , t-SNE
 
 #### Social / Online Platform Analysis
