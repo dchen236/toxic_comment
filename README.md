@@ -10,8 +10,9 @@ NOTE: if you have trouble loading the scripts, click reload after the first fail
 - [script: non_nn_models.ipynb](https://github.com/dchen236/toxic_comment/blob/master/non_nn_models.ipynb) for trainning non neural networks including Naive Bayes, Logistic Regression and Decision Tree
 - [script: BERT_Toxic.ipynb](https://github.com/dchen236/toxic_comment/blob/master/BERT_Toxic.ipynb) for trainning BERT
 - [script: kaggle_benchmark.py](https://github.com/dchen236/toxic_comment/blob/master/kaggle_benchmark.py) for trainning CNN
-- [script: tBERT_tSNE.ipynb](https://github.com/dchen236/toxic_comment/blob/master/BERT_tSNE.ipynb) for t-SNE visualization
-TODO: add LSTM, CNN + BERT , t-SNE
+- [script: BERT_CNN.ipynb](https://github.com/dchen236/toxic_comment/blob/master/BERT_CNN.ipynb) for trainning BERT-CNN
+- [script: LSTM.ipynb](https://github.com/dchen236/toxic_comment/blob/master/LSTM.ipynb) for traininig LSTM
+- [script: BERT_tSNE.ipynb](https://github.com/dchen236/toxic_comment/blob/master/BERT_tSNE.ipynb) for t-SNE visualization
 
 #### Social / Online Platform Analysis
 - [covid19-tweet-eda.ipynb](https://github.com/dchen236/toxic_comment/blob/master/covid19-tweet-eda.ipynb) covid19 related tweets EDA
